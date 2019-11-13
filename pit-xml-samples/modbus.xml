@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://peachfuzzer.com/2012/Peach ../peach.xsd">
+
+ <DataModel name="send_data"> 
+  <Block name="mod">
+   <Number name="01" size="16" value="d9 00" valueType="hex" signed="false" mutable="false"/>
+   <Number name="02" size="16" value="00 00" valueType="hex" signed="false" mutable="false"/>
+   <Number name="03" size="16" value="00 06" valueType="hex" signed="false" mutable="false"/>
+   <Number name="04" size="16" value="01 06" valueType="hex" signed="false" mutable="false"/>
+   <Number name="05" size="16" value="00 02" valueType="hex" signed="false" mutable="false"/>
+   <Number name="06" size="16" value="00 01" valueType="hex" signed="false"/><!-- 不加mutable="false" 说明要对该数值进行fuzz -->
+  </Block>
+ </DataModel>
+
+ <StateModel name="TheState" initialState="initialState">
+   <State name="initialState">
+    <Action type="output">
+      <DataModel ref="send_data" />
+    </Action>
+  </State>
+ </StateModel>
+
+ <!--使用socket进行监听端口 -->
+ <Agent name="Local">
+  <Monitor class="Socket">
+   <Param name="Host" value="10.211.55.6" />
+   <Param name="port" value="502" />
+  </Monitor>
+ </Agent>
+
+ <!--log保存-->
+ <Test name="Default">
+  <Agent ref="Local" />
+  <StateModel ref="TheState" />
+  <Logger class="File">
+   <Param name="Path" value="C:\peach\logs" />
+  </Logger>
+
+  <Publisher class="tcp.Tcp">
+   <Param name="Host" value="10.211.55.6" />
+   <Param name="Port" value="502" /> 
+  </Publisher>
+
+ </Test>
+</Peach>

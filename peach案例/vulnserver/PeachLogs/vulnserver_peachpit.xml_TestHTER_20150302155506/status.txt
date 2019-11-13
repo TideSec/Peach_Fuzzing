@@ -1,0 +1,31 @@
+Peach Fuzzing Run
+=================
+
+Date of run: 02-Mar-15 3:55:05 PM
+Peach Version: 3.1.53.0
+Seed: 58160
+Command line: fuzzers\vulnserver_peachpit.xml TestHTER 
+Pit File: fuzzers\vulnserver_peachpit.xml
+. Test starting: TestHTER
+
+. Iteration 1 : 02-Mar-15 3:55:06 PM
+. Iteration 1 of 4294967295 : 02-Mar-15 3:55:07 PM
+. Iteration 100 of 4294967295 : 02-Mar-15 3:55:22 PM
+. Iteration 200 of 4294967295 : 02-Mar-15 3:55:43 PM
+. Iteration 300 of 4294967295 : 02-Mar-15 3:56:04 PM
+. Iteration 400 of 4294967295 : 02-Mar-15 3:56:24 PM
+! Fault detected at iteration 490 : 02-Mar-15 3:56:43 PM
+! Fault detected at iteration 490 : 02-Mar-15 3:56:51 PM
+. Iteration 500 of 4294967295 : 02-Mar-15 3:56:53 PM
+! Fault detected at iteration 544 : 02-Mar-15 3:57:02 PM
+! Fault detected at iteration 544 : 02-Mar-15 3:57:09 PM
+. Iteration 600 of 4294967295 : 02-Mar-15 3:57:21 PM
+. Iteration 700 of 4294967295 : 02-Mar-15 3:57:42 PM
+! Fault detected at iteration 726 : 02-Mar-15 3:57:47 PM
+! Fault detected at iteration 726 : 02-Mar-15 3:57:53 PM
+! Fault detected at iteration 734 : 02-Mar-15 3:57:56 PM
+! Fault detected at iteration 734 : 02-Mar-15 3:58:02 PM
+! Fault detected at iteration 791 : 02-Mar-15 3:58:14 PM
+! Fault detected at iteration 791 : 02-Mar-15 3:58:21 PM
+. Iteration 800 of 4294967295 : 02-Mar-15 3:58:23 PM
+! Fault detected at iteration 848 : 02-Mar-15 3:58:34 PM

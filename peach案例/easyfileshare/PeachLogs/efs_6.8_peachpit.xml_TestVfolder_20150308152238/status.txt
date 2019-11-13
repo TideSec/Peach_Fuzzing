@@ -1,0 +1,71 @@
+Peach Fuzzing Run
+=================
+
+Date of run: 08-Mar-15 3:22:37 PM
+Peach Version: 3.1.53.0
+Seed: 31337
+Command line: fuzzers\efs_6.8_peachpit.xml TestVfolder 
+Pit File: fuzzers\efs_6.8_peachpit.xml
+. Test starting: TestVfolder
+
+. Iteration 1 : 08-Mar-15 3:22:38 PM
+. Iteration 1 of 8596 : 08-Mar-15 3:22:39 PM
+. Iteration 100 of 8596 : 08-Mar-15 3:23:03 PM
+. Iteration 200 of 8596 : 08-Mar-15 3:23:27 PM
+. Iteration 300 of 8596 : 08-Mar-15 3:23:52 PM
+. Iteration 400 of 8596 : 08-Mar-15 3:24:15 PM
+! Fault detected at iteration 435 : 08-Mar-15 3:25:10 PM
+! Fault detected at iteration 435 : 08-Mar-15 3:25:18 PM
+! Fault detected at iteration 437 : 08-Mar-15 3:25:19 PM
+! Fault detected at iteration 437 : 08-Mar-15 3:25:26 PM
+! Fault detected at iteration 439 : 08-Mar-15 3:25:28 PM
+! Fault detected at iteration 439 : 08-Mar-15 3:25:35 PM
+! Fault detected at iteration 441 : 08-Mar-15 3:25:36 PM
+! Fault detected at iteration 441 : 08-Mar-15 3:25:44 PM
+! Fault detected at iteration 452 : 08-Mar-15 3:25:47 PM
+! Fault detected at iteration 452 : 08-Mar-15 3:25:55 PM
+! Fault detected at iteration 464 : 08-Mar-15 3:25:59 PM
+! Fault detected at iteration 464 : 08-Mar-15 3:26:07 PM
+! Fault detected at iteration 466 : 08-Mar-15 3:26:08 PM
+! Fault detected at iteration 466 : 08-Mar-15 3:26:16 PM
+! Fault detected at iteration 476 : 08-Mar-15 3:26:19 PM
+! Fault detected at iteration 476 : 08-Mar-15 3:26:27 PM
+! Fault detected at iteration 494 : 08-Mar-15 3:26:31 PM
+! Fault detected at iteration 494 : 08-Mar-15 3:26:40 PM
+. Iteration 500 of 8596 : 08-Mar-15 3:26:42 PM
+! Fault detected at iteration 516 : 08-Mar-15 3:26:46 PM
+! Fault detected at iteration 516 : 08-Mar-15 3:26:54 PM
+! Fault detected at iteration 517 : 08-Mar-15 3:26:55 PM
+! Fault detected at iteration 517 : 08-Mar-15 3:27:03 PM
+! Fault detected at iteration 518 : 08-Mar-15 3:27:03 PM
+! Fault detected at iteration 518 : 08-Mar-15 3:27:12 PM
+! Fault detected at iteration 519 : 08-Mar-15 3:27:12 PM
+! Fault detected at iteration 519 : 08-Mar-15 3:27:20 PM
+! Fault detected at iteration 520 : 08-Mar-15 3:27:21 PM
+! Fault detected at iteration 520 : 08-Mar-15 3:27:29 PM
+! Fault detected at iteration 521 : 08-Mar-15 3:27:29 PM
+! Fault detected at iteration 521 : 08-Mar-15 3:27:37 PM
+! Fault detected at iteration 522 : 08-Mar-15 3:27:38 PM
+! Fault detected at iteration 522 : 08-Mar-15 3:27:45 PM
+! Fault detected at iteration 523 : 08-Mar-15 3:27:47 PM
+! Fault detected at iteration 523 : 08-Mar-15 3:27:54 PM
+! Fault detected at iteration 524 : 08-Mar-15 3:27:55 PM
+! Fault detected at iteration 524 : 08-Mar-15 3:28:03 PM
+! Fault detected at iteration 525 : 08-Mar-15 3:28:04 PM
+! Fault detected at iteration 525 : 08-Mar-15 3:28:11 PM
+! Fault detected at iteration 526 : 08-Mar-15 3:28:12 PM
+! Fault detected at iteration 526 : 08-Mar-15 3:28:21 PM
+! Fault detected at iteration 527 : 08-Mar-15 3:28:21 PM
+! Fault detected at iteration 527 : 08-Mar-15 3:28:29 PM
+! Fault detected at iteration 528 : 08-Mar-15 3:28:30 PM
+! Fault detected at iteration 528 : 08-Mar-15 3:28:38 PM
+! Fault detected at iteration 529 : 08-Mar-15 3:28:38 PM
+! Fault detected at iteration 529 : 08-Mar-15 3:28:46 PM
+! Fault detected at iteration 530 : 08-Mar-15 3:28:47 PM
+! Fault detected at iteration 530 : 08-Mar-15 3:28:55 PM
+! Fault detected at iteration 531 : 08-Mar-15 3:28:56 PM
+! Fault detected at iteration 531 : 08-Mar-15 3:29:04 PM
+! Fault detected at iteration 532 : 08-Mar-15 3:29:05 PM
+! Fault detected at iteration 532 : 08-Mar-15 3:29:13 PM
+! Fault detected at iteration 533 : 08-Mar-15 3:29:14 PM
+! Fault detected at iteration 533 : 08-Mar-15 3:29:21 PM

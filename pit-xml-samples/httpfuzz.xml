@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://peachfuzzer.com/2012/Peach ../peach.xsd">
+
+    <DataModel name="DataLogin">
+            <String value="GET /index.php?m=login" mutable="false" token="true"/>                   
+            <String value=" HTTP/1.1" />   <!-- 不加mutable="false" 说明要对该数值进行fuzz -->
+            <String value="\r\n" /> 
+
+            <String value="Content-Type: " mutable="false" token="true"/>
+            <String value="application/x-www-form-urlencoded" mutable="false" token="true"/>   
+            <String value="\r\n" mutable="false" token="true"/>
+
+            <String value="Accept-Encoding: " mutable="false" token="true"/>
+            <String value="gzip, deflate" mutable="false" token="true"/>   
+            <String value="\r\n" mutable="false" token="true"/>
+
+            <String value="Accept: " mutable="false" token="true"/>
+            <String value="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3" mutable="false" token="true"/>   
+            <String value="\r\n" mutable="false" token="true"/>  
+
+            <String value="User-Agent: " mutable="false" token="true"/>
+            <String value="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36" mutable="false" token="true"/>   
+            <String value="\r\n" mutable="false" token="true"/>
+
+            <String value="Host: 10.211.55.2" mutable="false" token="true"/>
+            <String value="\r\n" mutable="false" token="true"/>
+
+            <String value="Conection: " mutable="false" token="true"/>
+            <String value="Keep-Alive" mutable="false" token="true"/>   
+            <String value="\r\n" mutable="false" token="true"/>
+
+            
+    </DataModel>   
+
+
+    <StateModel name="StateLogin" initialState="Initial">
+        <State name="Initial">
+            <Action type="output">
+                <DataModel ref="DataLogin"/>
+            </Action>            
+        </State>
+    </StateModel>   
+
+
+    <Test name="Default">
+        
+        <StateModel ref="StateLogin"/>
+        <Publisher class="TcpClient">
+            <Param name="Host" value="10.211.55.2"/>
+            <Param name="Port" value="80"/>
+        </Publisher>
+
+        <Logger class="File">
+            <Param name="Path" value="C:\peach\logs"/>
+        </Logger>
+
+        <Strategy class="Sequential" />
+
+    </Test>   
+</Peach>

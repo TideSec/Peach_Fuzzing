@@ -1,0 +1,11 @@
+Peach Fuzzing Run
+=================
+
+Date of run: 02-Mar-15 3:53:52 PM
+Peach Version: 3.1.53.0
+Seed: 27601
+Command line: fuzzers\vulnserver_peachpit.xml TestHTER 
+Pit File: fuzzers\vulnserver_peachpit.xml
+. Test starting: TestHTER
+
+. Test finished: TestHTER

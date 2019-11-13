@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://peachfuzzer.com/2012/Peach /peach/peach.xsd">
+<DataModel name="Headermodel">
+    <String name="Header" /> 
+    <String value=": "/> 
+    <String name="Value" /> 
+    <String value="\r\n" /> 
+</DataModel>
+
+
+<DataModel name="HttpRequest">
+    <Block name= "RequestLine"> 
+        <String name="Method"/>
+        <String value=" "/> 
+        <String name="RequestUri"/> 
+        <String value=" "/>
+        <String name="HttpVersion"/>
+        <String value="\r\n"/> 
+    </Block> 
+
+    <Block name="HeaderHost" ref="Headermodel"> 
+        <String name="Header" value="Host" /> 
+    </Block> 
+
+    <Block name="HeaderContentLength" ref="Headermodel"> 
+        <String name="Header" value="Content-Length" /> 
+        <String name="Value"> 
+            <Relation type="size" of="httpBody.content"/> 
+        </String> 
+    </Block> 
+
+    <Block name="httpBody"> 
+        <String name="content" value="length is 12" /> 
+    </Block> 
+</DataModel>
+
+
+ <Data name="HttpGet" > 
+    <Field name="RequestLine.Method" value="GET"/>
+    <Field name="RequestLine.RequestUri" value="http://10.211.55.2" />
+    <Field name="RequestLine.HttpVersion" value="HTTP/1.1"/>
+    <Field name="HeaderHost.Value" value="http://10.211.55.2"/>
+    <Field name="httpBody.content" value="\r\nfuzz"/>
+ </Data> 
+
+ <Data name="HttpOptions" ref="HttpGet"> 
+    <Field name="RequestLine.Method" value="OPTIONS"/> 
+    <Field name="RequestLine.RequestUri" value="*" /> 
+    <Field name="HeaderHost.Value" value="" /> 
+ </Data> 
+
+ <StateModel name="State1" initialState="Initial"> 
+    <State name="Initial">
+        <Action type="output">
+            <DataModel ref="HttpRequest"/>
+            <Data ref="HttpGet"/> 
+        </Action> 
+    </State> 
+</StateModel> 
+
+<StateModel name="State2" initialState="Initial"> 
+    <State name="Initial"> 
+        <Action type="output"> 
+            <DataModel ref="HttpRequest" /> 
+            <Data ref="HttpOptions" />
+        </Action> 
+    </State> 
+</StateModel>
+
+<Test name="Default">
+        <StateModel ref="State1"/>
+
+        <Publisher class="TcpClient">
+                <Param name="Host" value="10.211.55.2" />
+                <Param name="Port" value="80" />
+        </Publisher>
+        <Logger class="File">
+            <Param name="Path" value="C:\peach\logs"/>
+        </Logger>
+</Test>
+</Peach>

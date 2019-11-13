@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://peachfuzzer.com/2012/Peach ../peach.xsd">
+
+    <DataModel name="DataHTER">
+        <String value="HTER " mutable="false" token="true"/>
+        <String value=""/>
+        <String value="\r\n" mutable="false" token="true"/>
+    </DataModel>
+
+    <StateModel name="StateHTER" initialState="Initial">
+        <State name="Initial">
+            <Action type="input" ><DataModel ref="DataResponse"/></Action>
+            <Action type="output"><DataModel ref="DataHTER"/></Action>
+            <Action type="input" ><DataModel ref="DataResponse"/></Action>
+        </State>
+    </StateModel>
+
+    <DataModel name="DataResponse">
+        <String value=""/>
+    </DataModel>
+
+    <Agent name="RemoteAgent" location="tcp://127.0.0.1:9001">
+        <!-- Run and attach windbg to a vulnerable server. -->
+        <Monitor class="WindowsDebugger">
+            <Param name="CommandLine" value="Z:\fuzzing\results\vulnserver\bin\vulnserver.exe"/>
+            <Param name="WinDbgPath" value="C:\windbg" />
+        </Monitor>
+    </Agent>
+
+    <Test name="TestHTER">
+        <Agent ref="RemoteAgent"/>
+        <StateModel ref="StateHTER"/>
+        <Publisher class="TcpClient">
+            <Param name="Host" value="127.0.0.1"/>
+            <Param name="Port" value="9999"/>
+        </Publisher>
+
+        <Logger class="File">
+            <Param name="Path" value="Logs"/>
+        </Logger>
+    </Test>
+</Peach>
