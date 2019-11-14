@@ -1,8 +1,8 @@
-最近研究了peach的原理、框架和配置使用，记录了一篇学习心得**《使用peach进行模糊测试从入门到放弃》**`https://github.com/TideSec/Peach_Fuzzing/blob/master/使用peach进行模糊测试从入门到放弃.pdf`。
+最近研究了peach的原理、框架和配置使用，记录了一篇学习心得《使用peach进行模糊测试从入门到放弃》`https://github.com/TideSec/Peach_Fuzzing/blob/master/使用peach进行模糊测试从入门到放弃.pdf`。
 
 在学习使用peach进行模糊测试时，搜集到的一些不错的资料，以及配套的一些软件或脚本。
 
-1、比较推荐的资料是**《peach框架模糊测试英文文档》**，这是官方指南，最权威的peach使用解读。
+1、比较推荐的资料是《peach框架模糊测试英文文档》，这是官方指南，最权威的peach使用解读。
 
 2、peach文件夹中包含了收集到的4个版本的peach最新版软件包，分别为windows版（x86）、windows版（x64）、oxs版、linux版、python版。
 
